@@ -11,17 +11,6 @@ export default function Accordion() {
     data.forEach( item => multiFlag[item.id] = false)
     const [selected, setSelected] = useState(multiFlag)
 
-    console.log(selected)
-
-    function handleSingleSelection(clickedId) {
-        if (selected === clickedId) {
-            setSelected(null);
-        } else {
-            setSelected(clickedId);
-        }
-    }
-
-
     function toggleMultiSelection() {
         if (multiSelect) {
             const workData = multiFlag;
@@ -45,8 +34,6 @@ export default function Accordion() {
         setClicked(clickedId);
 
     }
-
-    
 
     return <div className = "wrapper">
         <button id = "multiBtn" onClick={()=>toggleMultiSelection()}>
