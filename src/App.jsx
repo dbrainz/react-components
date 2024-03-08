@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Accordian from './components/Accordian/index'
+import Accordion from './components/Accordion/index'
 <comp></comp>
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <Accordian />
+      <Accordion />
     </>
   )
 }
