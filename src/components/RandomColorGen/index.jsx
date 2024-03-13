@@ -21,22 +21,18 @@ export default function RandomColorGen() {
                 <button onClick={() => setDisplayFormat('rgb')} className="randomColorBtn">RGB Display</button>
                 <button onClick={() => generateColor()} className="randomColorBtn">Random Color</button>
             </div>
-            <div className = 'colorDisplay'>
-                { displayFormat === "rgb" ? 
-                    <div>
-                        <h1>RGB</h1>
-                        <h2>{currentColor[0]}, {currentColor[1]}, {currentColor[2]}</h2> 
-                    </div>
+            { displayFormat === "rgb" ? 
+                <div className="colorDisplay">
+                    <h1>RGB</h1>
+                    <h2>{currentColor[0]}, {currentColor[1]}, {currentColor[2]}</h2> 
+                </div>
 
-                    : 
-                    <div>
-                        <h1>Hex</h1>
-                        <h2>#{currentColor[0].toString(16).padStart(2,"0")}{currentColor[1].toString(16).padStart(2,"0")}{currentColor[2].toString(16).padStart(2,"0")}</h2>
-                    </div>    
-                }
-
-                    
-            </div>
+                : 
+                <div className="colorDisplay">
+                    <h1>Hex</h1>
+                    <h2>#{currentColor[0].toString(16).padStart(2,"0")}{currentColor[1].toString(16).padStart(2,"0")}{currentColor[2].toString(16).padStart(2,"0")}</h2>
+                </div>    
+            }
 
         </div>
 }
