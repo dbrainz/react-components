@@ -17,8 +17,8 @@ export default function RandomColorGen() {
 
     return <div className="wrapper">
             <div className="buttons">
-                <button onClick={() => setDisplayFormat('hex')} className="randomColorBtn">Hex Color</button>
-                <button onClick={() => setDisplayFormat('rgb')} className="randomColorBtn">RGB Color</button>
+                <button onClick={() => setDisplayFormat('hex')} className="randomColorBtn">Hex Display</button>
+                <button onClick={() => setDisplayFormat('rgb')} className="randomColorBtn">RGB Display</button>
                 <button onClick={() => generateColor()} className="randomColorBtn">Random Color</button>
             </div>
             <div className = 'colorDisplay'>
@@ -28,7 +28,14 @@ export default function RandomColorGen() {
                         <h2>{currentColor[0]}, {currentColor[1]}, {currentColor[2]}</h2> 
                     </div>
 
-                    : <h1>Hex</h1>}
+                    : 
+                    <div>
+                        <h1>Hex</h1>
+                        <h2>#{currentColor[0].toString(16).padStart(2,"0")}{currentColor[1].toString(16).padStart(2,"0")}{currentColor[2].toString(16).padStart(2,"0")}</h2>
+                    </div>    
+                }
+
+                    
             </div>
 
         </div>
