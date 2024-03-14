@@ -3,6 +3,7 @@ import './App.css'
 import Accordion from './components/Accordion/index'
 import RandomColorGen from './components/RandomColorGen'
 import StarRating from './components/StarRating'
+import ImageSlider from './components/ImageSlider'
 <comp></comp>
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
 
   return (
     <>
-      <StarRating />
+      <ImageSlider />
     </>
   )
 }
