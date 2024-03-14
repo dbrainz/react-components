@@ -8,7 +8,11 @@ export default function StarRating({numStars=5}) {
     const [mouseRating, setMouseRating] = useState(-1);
 
     function starColor(currentIndex) {
-        if (currentIndex <= currentRating || mouseRating <= currentRating)
+        if (currentIndex <= currentRating || currentIndex <= mouseRating) {
+            return 'yellow'
+        } else {
+            return 'black'
+        }
     }
 
     return <div className='star-rating'>
@@ -19,7 +23,7 @@ export default function StarRating({numStars=5}) {
                     onClick={ () => setCurrentRating(index)}
                     onMouseOver={() => setMouseRating(index)}
                     onMouseLeave={() => setMouseRating(-1)}
-                    style={{color: {starColor(index)}}}
+                    style={{color: `${starColor(index)}`}}
                     />
             })
         }
