@@ -1,24 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './styles.css';
 
 
 
-export default function ImageSlider({url, limit}) {
+export default function ImageSlider({url, limit=5}) {
     
     const [currentPic, setCurrentPic] = useState(0);
     const [picData, setPicData] = useState(null);
 
-    fetch("https://picsum.photos/v2/list?page=1&limit=10")
-        .then( (data) => setData(data))
-        .catch( error => 
-            console.log(error)
-            )
+        useEffect(() => {
+            fetch(url)
+                .then((response) => response.json())
+                .then( (data) => {
+                    console.log(data)
+                    setPicData(data)
+                })
+                .catch( error => 
+                    console.log(error)
+                    )
+        }, [url])
 
     return <div className='image-slider'>
-        { picData ?  
-        <span className="leftArrow">{"<"}</span>
-        <img src={} />
-        <span className="rightArrow">{">"}</span> :
-}
+        { picData ?
+            <div>
+                <span className="leftArrow">{"<"}</span>
+                <img src={picData[currentPic].download_url} />
+                <span className="rightArrow">{">"}</span>
+            </div> :
+            <div>
+                <p>Loading...</p>
+            </div>
+    }
     </div>
 }
