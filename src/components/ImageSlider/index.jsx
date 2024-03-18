@@ -22,10 +22,10 @@ export default function ImageSlider({url, limit=5}) {
 
     return <div className='image-slider'>
         { picData ?
-            <div>
-                <span className="leftArrow">{"<"}</span>
-                <img src={picData[currentPic].download_url} />
-                <span className="rightArrow">{">"}</span>
+            <div className="pic-window">
+                <span className="left-arrow">{"<"}</span>
+                <img className="slider-pic" src={picData[currentPic].download_url} />
+                <span className="right-arrow">{">"}</span>
             </div> :
             <div>
                 <p>Loading...</p>

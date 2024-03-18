@@ -2,3 +2,13 @@
     display: flex;
     flex-direction: row;
 }
+
+.slider-pic {
+    height: 400px;
+    width: 600px;
+}
+
+.pic-window {
+    display: flex;
+    align-items: center;
+}
