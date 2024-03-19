@@ -12,3 +12,21 @@
     display: flex;
     align-items: center;
 }
+
+.left-arrow {
+    border-radius: 50%;
+    background-color: white;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    z-index: 5;
+}
+
+.right-arrow {
+    border-radius: 50%;
+    background-color: white;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    z-index: 5;
+}
