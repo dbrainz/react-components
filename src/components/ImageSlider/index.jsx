@@ -33,11 +33,23 @@ export default function ImageSlider({url, limit=5}) {
     }, [url])
 
     return <div className='image-slider'>
-        { picData ?
+        { picData && picData.length ?
             <div className="pic-window">
-                <span onClick = { () => goPrevPic()} className="left-arrow">{"<"}</span>
+                <span onClick = { () => goPrevPic()} className="arrow left-arrow">{"<"}</span>
                 <img className="slider-pic" src={picData[currentPic].download_url} />
-                <span onClick = { () => goNextPic()} className="right-arrow">{">"}</span>
+                <span onClick = { () => goNextPic()} className="arrow right-arrow">{">"}</span>
+                <span className="circle-indicators">
+                    {
+                        picData.map( ( _ , index) => {
+                            if (index===currentPic) {
+                                return <button key={index} className="circ-indicator active-indicator" onClick={ () => setCurrentPic(index)}></button>
+                            } else {
+                                return <button key={index} className="circ-indicator" onClick={ () => setCurrentPic(index)}></button>
+                            }
+                        })
+                    }
+
+                </span>
             </div> :
             <div>
                 <p>Loading...</p>
